@@ -1,0 +1,18 @@
+DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS watchlist CASCADE; 
+
+CREATE TABLE users (
+  id BIGSERIAL PRIMARY KEY,
+  email VARCHAR NOT NULL UNIQUE,
+  password_digest VARCHAR NOT NULL,
+  counter INTEGER
+);
+
+CREATE TABLE watchlist (
+  id BIGSERIAL PRIMARY KEY,
+  user_id INT REFERENCES users(id),
+  symbol VARCHAR NOT NULL,
+  name VARCHAR NOT NULL,
+  price  VARCHAR NOT NULL,
+  close VARCHAR NOT NULL
+);
