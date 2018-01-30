@@ -9,6 +9,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "axios": "^0.17.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
     "bootstrap": "^4.0.0",
@@ -19,7 +20,8 @@
     "mustache-express": "^1.2.5",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "pg-promise": "^7.4.0"
+    "pg-promise": "^7.4.0",
+    "util": "^0.10.3"
   },
   "devDependencies": {
     "nodemon": "^1.14.11"

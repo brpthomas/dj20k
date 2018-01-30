@@ -39,6 +39,7 @@ app.use(cookieParser());
 
 //controllers routes
 app.use('/users', require('./controllers/users'));
+app.use('/stocks', require('./controllers/stockController'));
 
 //renders the landing page
 app.get('/', (req, res) => {

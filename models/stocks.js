@@ -6,8 +6,8 @@ function findUsersPortfolio() {
 }
 
 //creates a new stock in the "stocks" db 
-function create(user_id, symbol, name, price, close) {
-	const queryPromise = db.one(`INSERT INTO watchlist (user_id, symbol, name, price, close) VALUES ($1, $2, $3, $4, $5) RETURNING *`, [user_id, symbol, name, price, close]);
+function create(symbol, name, price, close) {
+	const queryPromise = db.one(`INSERT INTO watchlist  (symbol, name, price, close) VALUES ($1, $2, $3, $4) RETURNING *id`, [symbol, name, price, close]);
 	return queryPromise;
 }
 

@@ -4,15 +4,21 @@ DROP TABLE IF EXISTS watchlist CASCADE;
 CREATE TABLE users (
   id BIGSERIAL PRIMARY KEY,
   email VARCHAR NOT NULL UNIQUE,
-  password_digest VARCHAR NOT NULL,
-  counter INTEGER
+  password_digest VARCHAR NOT NULL
 );
 
 CREATE TABLE watchlist (
   id BIGSERIAL PRIMARY KEY,
-  user_id INT REFERENCES users(id),
   symbol VARCHAR NOT NULL,
   name VARCHAR NOT NULL,
   price  VARCHAR NOT NULL,
   close VARCHAR NOT NULL
+);
+
+CREATE TABLE marker (
+  id BIGSERIAL PRIMARY KEY, 
+  time_stamp VARCHAR(225),
+  watchlist_id INT REFERENCES watchlist,
+  users_id INT REFERENCES users
+
 );
