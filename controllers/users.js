@@ -2,6 +2,7 @@ const User = require('../models/user');
 const router = require('express').Router();
 const passport = require('passport');
 const auth = require('../services/auth');
+const stocks = require('..//models/stocks');
 
 // ----------------------------------------
 // users index
@@ -45,6 +46,8 @@ router.get('/logout', (req, res) => {
 router.get('/login', (req, res) => {
     res.render('users/login');
 });
+
+//checks if the password is correct at the login page
 
 router.post('/login', passport.authenticate(
     'local-login', {
